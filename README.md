@@ -1,0 +1,1 @@
+This is a project that will allow a user to create an e-signature using their finger. This project uses openCV to track a users finger then saves the signature as a png file.
