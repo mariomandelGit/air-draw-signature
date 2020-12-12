@@ -20,7 +20,7 @@ def openNewWindow(window):
 
 
 def openSigWindow():
-    signature()
+    signature.callSignature()
 
 
 class Application():
@@ -28,7 +28,7 @@ class Application():
     def __init__(self):
         window = tk.Tk()
         window.title('Air Signature')
-        window.state("zoomed")
+        window.state("normal")
         window.config(bg= '#D9CB8D')
         buttonFont = font.Font(family='Courier', size=25, weight='bold')
         tk.Button(text='Draw Your Signature', height=4, width=25, bg='grey', font=buttonFont, command=openSigWindow).place(x=380, y=125)
