@@ -1,1 +1,1 @@
-This is a project that will allow a user to create an e-signature using a blue target object. This project uses openCV to track the users target and then saves the signature as a png file.
+This is a project that will allow a user to create an e-signature using a blue target object or just draw in blue, green, red, or yellow. This project uses openCV to track the users target and then allows the user to save their drawing as a png file.
