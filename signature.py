@@ -96,7 +96,6 @@ def callSignature():
     # Cleanup the camera and close any open windows
     camera.release()
     cv2.destroyAllWindows()
-=======
 # Define the upper and lower boundaries for a color to be considered "Blue"
 Lower = np.array([100, 60, 60])
 Upper = np.array([140, 255, 255])
