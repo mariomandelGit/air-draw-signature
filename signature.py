@@ -52,8 +52,7 @@ def callSignature():
 
         # Check to see if any contours were found
         if len(cnts) > 0:
-            # Sort the contours and find the largest one -- we
-            # will assume this contour corresponds to the area of the bottle cap
+            # Sort the contours and find the largest one
             cnt = sorted(cnts, key=cv2.contourArea, reverse=True)[0]
             # Get the radius of the enclosing circle around the found contour
             ((x, y), radius) = cv2.minEnclosingCircle(cnt)
@@ -72,7 +71,7 @@ def callSignature():
                 if colorIndex == 0:
                     bpoints[bindex].appendleft(center)
 
-                # Append the next deque when no contours are detected (i.e., bottle cap reversed)
+                # Append the next deque when no contours are detected (object hidden/out of frame)
         else:
             bpoints.append(deque(maxlen=512))
             bindex += 1
@@ -97,5 +96,3 @@ def callSignature():
     # Cleanup the camera and close any open windows
     camera.release()
     cv2.destroyAllWindows()
-
-
