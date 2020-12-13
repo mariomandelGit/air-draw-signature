@@ -85,6 +85,7 @@ def openDrawInstructionsWindow(window):
     tk.Button(newWindow, text="Click here to start process", command=lambda: openDrawWindow(newWindow)).pack()
     newWindow.mainloop()
 
+
 class Application():
 
     def __init__(self):
@@ -94,9 +95,11 @@ class Application():
         window.config(bg='#D9CB8D')
         buttonFont = font.Font(family='Courier', size=25, weight='bold')
         tk.Button(text='Draw Your Signature', height=4, width=25, bg='grey', font=buttonFont,
-                  command=lambda: openSigInstructionsWindow(window)).pack(side=tk.LEFT, padx=(100, 100), pady=(100, 100))
+                  command=lambda: openSigInstructionsWindow(window)).pack(side=tk.LEFT, padx=(100, 100),
+                                                                          pady=(100, 100))
         tk.Button(text='Free Draw', height=4, width=25, bg='grey', font=buttonFont,
-                  command=lambda: openDrawInstructionsWindow(window)).pack(side=tk.RIGHT, padx=(100, 100), pady=(100, 100))
+                  command=lambda: openDrawInstructionsWindow(window)).pack(side=tk.RIGHT, padx=(100, 100),
+                                                                           pady=(100, 100))
         window.mainloop()
 
 
