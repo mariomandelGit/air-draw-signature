@@ -90,9 +90,8 @@ class Application():
         window.config(bg='#D9CB8D')
         buttonFont = font.Font(family='Courier', size=25, weight='bold')
         tk.Button(text='Draw Your Signature', height=4, width=25, bg='grey', font=buttonFont,
-                  command=lambda: openSigInstructionsWindow(window)).place(x=380, y=125)
-        tk.Button(text='Save Your Signature', height=4, width=25, bg='grey', font=buttonFont).place(x=80, y=375)
-        tk.Button(text='Free Draw', height=4, width=25, bg='grey', font=buttonFont).place(x=680, y=375)
+                  command=lambda: openSigInstructionsWindow(window)).place(side=tk.RIGHT)
+        tk.Button(text='Free Draw', height=4, width=25, bg='grey', font=buttonFont).place(side=tk.LEFT)
         window.mainloop()
 
 
