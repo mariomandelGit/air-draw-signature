@@ -75,7 +75,6 @@ def callSignature():
         else:
             bpoints.append(deque(maxlen=512))
             bindex += 1
-        # Draw lines of all the colors (Blue, Green, Red and Yellow)
         points = [bpoints]
         for i in range(len(points)):
             for j in range(len(points[i])):

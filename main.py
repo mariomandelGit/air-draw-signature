@@ -42,6 +42,8 @@ def openSigInstructionsWindow(window):
     tk.Label(newWindow, text="Once you're finished, if you would like to save your signature you may either press "
                              "the\nsave button from the original page or press CTRL+S on your keyboard to save.\n\n",
              font=InstructionFont, bg='#D9CB8D').pack()
+    tk.Label(newWindow, text="When you are done signing, press 'Q' on your keyboard to close.\n\n",
+             font=InstructionFont, bg='#D9CB8D').pack()
     tk.Button(newWindow, text="Click here to start process", command=lambda: openSigWindow(newWindow)).pack()
     newWindow.mainloop()
 
@@ -77,6 +79,8 @@ def openDrawInstructionsWindow(window):
                              "use to write.\n\n", font=InstructionFont, bg='#D9CB8D').pack()
     tk.Label(newWindow, text="Now you're free to draw! Draw whatever you would like, use CTRL+S to save your drawing. "
                              "\n You can move the object to the the top buttons to change the color or clear all\n\n",
+             font=InstructionFont, bg='#D9CB8D').pack()
+    tk.Label(newWindow, text="When you are done drawing, press 'Q' on your keyboard to close.\n\n",
              font=InstructionFont, bg='#D9CB8D').pack()
     tk.Button(newWindow, text="Click here to start process", command=lambda: openDrawWindow(newWindow)).pack()
     newWindow.mainloop()
