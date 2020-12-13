@@ -21,11 +21,11 @@ def openSigInstructionsWindow(window):
     newWindow.title("Air Signature Instructions")
     newWindow.config(bg='#D9CB8D')
     # sets the geometry of toplevel
-    newWindow.geometry("200x200")
-    InstructionHeader = font.Font(family='Courier', size=18, weight='bold')
+    newWindow.geometry("1500x1500")
+    InstructionHeader = font.Font(family='Courier', size=18, weight='bold', underline=True)
     InstructionFont = font.Font(family='Courier', size=14, weight='bold')
     # A Label widget to show in toplevel
-    tk.Label(newWindow, text="This page will explain how to use the Air Signature tool.\n\n", font=InstructionHeader,
+    tk.Label(newWindow, text="\nThis page will explain how to use the Air Signature tool.\n\n", font=InstructionHeader,
              bg='#D9CB8D').pack()
     tk.Label(newWindow, text="First of all, you'll need a blue item to draw with that will be easily recognizable to "
                              "the camera...\n\n", font=InstructionFont, bg='#D9CB8D').pack()
@@ -63,20 +63,20 @@ def openDrawInstructionsWindow(window):
     newWindow.title("Draw Instructions")
     newWindow.config(bg='#D9CB8D')
     # sets the geometry of toplevel
-    newWindow.geometry("200x200")
-    InstructionHeader = font.Font(family='Courier', size=18, weight='bold')
+    newWindow.geometry("1500x1500")
+    InstructionHeader = font.Font(family='Courier', size=18, weight='bold', underline=True)
     InstructionFont = font.Font(family='Courier', size=14, weight='bold')
     # A Label widget to show in toplevel
-    tk.Label(newWindow, text="This page will explain how to use the draw tool.\n\n", font=InstructionHeader,
-             bg='#D9CB8D').pack()
+    tk.Label(newWindow, text="\nThis page will explain how to use the draw tool.\n\n", font=InstructionHeader,
+             bg='#D9CB8D', underline=1).pack()
     tk.Label(newWindow, text="First of all, you'll need a blue item to draw with that will be easily recognizable to "
                              "the camera...\n\n", font=InstructionFont, bg='#D9CB8D').pack()
     tk.Label(newWindow, text="Also make sure to remove any other blue objects within the view of the camera.\n\n",
              font=InstructionFont, bg='#D9CB8D').pack()
     tk.Label(newWindow, text="Once the program opens, the camera will track the blue object and that is what you will "
                              "use to write.\n\n", font=InstructionFont, bg='#D9CB8D').pack()
-    tk.Label(newWindow, text="Now you're free to draw! Draw whatever you would like, use CTRL+S to save your drawing,"
-                             "\n or move the object to the clear all section for a clean canvas\n\n",
+    tk.Label(newWindow, text="Now you're free to draw! Draw whatever you would like, use CTRL+S to save your drawing. "
+                             "\n You can move the object to the the top buttons to change the color or clear all\n\n",
              font=InstructionFont, bg='#D9CB8D').pack()
     tk.Button(newWindow, text="Click here to start process", command=lambda: openDrawWindow(newWindow)).pack()
     newWindow.mainloop()
@@ -90,8 +90,9 @@ class Application():
         window.config(bg='#D9CB8D')
         buttonFont = font.Font(family='Courier', size=25, weight='bold')
         tk.Button(text='Draw Your Signature', height=4, width=25, bg='grey', font=buttonFont,
-                  command=lambda: openSigInstructionsWindow(window)).place(side=tk.RIGHT)
-        tk.Button(text='Free Draw', height=4, width=25, bg='grey', font=buttonFont).place(side=tk.LEFT)
+                  command=lambda: openSigInstructionsWindow(window)).pack(side=tk.LEFT, padx=(100, 100), pady=(100, 100))
+        tk.Button(text='Free Draw', height=4, width=25, bg='grey', font=buttonFont,
+                  command=lambda: openDrawInstructionsWindow(window)).pack(side=tk.RIGHT, padx=(100, 100), pady=(100, 100))
         window.mainloop()
 
 

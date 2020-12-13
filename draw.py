@@ -73,14 +73,14 @@ def callDraw():
         blueMask = cv2.dilate(blueMask, kernel, iterations=1)
 
         # Find contours in the image
-        (_, cnts, _) = cv2.findContours(blueMask.copy(), cv2.RETR_EXTERNAL,
+        (cnts, _) = cv2.findContours(blueMask.copy(), cv2.RETR_EXTERNAL,
                                         cv2.CHAIN_APPROX_SIMPLE)
         center = None
 
         # Check to see if any contours were found
         if len(cnts) > 0:
             # Sort the contours and find the largest one -- we
-            # will assume this contour correspondes to the area of the bottle cap
+            # will assume this contour corresponds to the area of the bottle cap
             cnt = sorted(cnts, key=cv2.contourArea, reverse=True)[0]
             # Get the radius of the enclosing circle around the found contour
             ((x, y), radius) = cv2.minEnclosingCircle(cnt)
