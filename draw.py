@@ -74,7 +74,7 @@ def callDraw():
 
         # Find contours in the image
         (cnts, _) = cv2.findContours(blueMask.copy(), cv2.RETR_EXTERNAL,
-                                     cv2.CHAIN_APPROX_SIMPLE)
+               cv2.CHAIN_APPROX_SIMPLE)
         center = None
 
         # Check to see if any contours were found
